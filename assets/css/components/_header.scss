@@ -63,11 +63,13 @@
     }
   }
 
+  .mobile-menu-btn,
   .search-btn {
     float: right;
     line-height: 46px;
     padding: 0 21px;
 
+    .menu-icon,
     .search-icon {
       color: #fff;
     }
@@ -76,5 +78,20 @@
   .search-btn:hover {
     cursor: pointer;
     background-color: #f44336;
+  }
+
+  .mobile-menu-btn:hover {
+    background-color: #ccc;
+
+    .menu-icon {
+      color: #000
+    }
+  }
+
+  .mobile-menu-btn {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
   }
 }

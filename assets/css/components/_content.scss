@@ -1,8 +1,9 @@
 #content {
   .content-section {
     width: 800px;
-    padding: 64px 0;
+    max-width: 100%;
     margin: 0 auto;
+    padding: 64px 16px 112px;
 
     .section-heading {
       font-size: 30px;

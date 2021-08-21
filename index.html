@@ -17,16 +17,16 @@
         <!-- Begin nav -->
         <ul id="nav">
           <li>
-            <a href="">Home</a>
+            <a href="#">Home</a>
           </li>
           <li>
-            <a href="">Band</a>
+            <a href="#Band">Band</a>
           </li>
           <li>
-            <a href="">Tour</a>
+            <a href="#Tour">Tour</a>
           </li>
           <li>
-            <a href="">Contact</a>
+            <a href="#Contact">Contact</a>
           </li>
           <li>
             <a href="#">
@@ -53,6 +53,10 @@
         <div class="search-btn">
           <i class="search-icon ti-search"></i>
         </div>
+
+        <div id="mobile-menu" class="mobile-menu-btn">
+          <i class="ti-menu menu-icon"></i>
+        </div>
         <!-- End Search Btn -->
       </div>
 
@@ -67,7 +71,7 @@
 
       <div id="content">
         <!-- Content Section -->
-        <div class="content-section">
+        <div id="Band" class="content-section">
           <h2 class="section-heading">THE BAND</h2>
           <p class="section-sub-heading">We love music</p>
           <p class="about-text">
@@ -104,7 +108,7 @@
         <!-- End Content -->
 
         <!-- Tour -->
-        <div class="tour-section">
+        <div id="Tour" class="tour-section">
           <div class="content-section">
             <h2 class="section-heading text-white">TOUR DATES</h2>
             <p class="section-sub-heading text-white">
@@ -166,7 +170,7 @@
         <!-- End Tour -->
 
         <!-- Contact -->
-        <div class="content-section">
+        <div id="Contact" class="content-section">
           <h2 class="section-heading">CONTACT</h2>
           <p class="section-sub-heading">Fan? Drop a note!</p>
 
@@ -317,6 +321,33 @@
       const modal = document.querySelector(".js-modal");
       const modalClose = document.querySelector(".js-modal-close");
       const modalContainer = document.querySelector(".js-modal-container");
+      const header = document.getElementById("header");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      const currentHeaderHeight = header.clientHeight;
+
+      mobileMenu.addEventListener("click", () => {
+        const isClose = header.clientHeight === currentHeaderHeight;
+        if(isClose) {
+          header.style.height = "auto";
+        } else {
+          header.style.height = `${currentHeaderHeight}px`;
+        }
+      });
+
+      const menuItems = document.querySelectorAll("#nav li a[href*='#']");
+
+      for(let i = 0; i < menuItems.length; i++) {
+        const menuItem = menuItems[i];
+        menuItem.onclick = function (e) {
+          const isParentMenu = this.nextElementSibling && this.nextElementSibling.classList.contains("subnav");
+          if(!isParentMenu) {
+            header.style.height = null;
+          } else {
+            e.preventDefault();
+          }
+        }
+      }
 
       for (const buyBtn of buyBtns) {
         buyBtn.addEventListener("click", () => {
