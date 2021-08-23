@@ -9,6 +9,15 @@
 
 // Mobile
 @media (max-width: 740px) {
+    .s-full-width,
+    .s-col-full {
+        width: 100% !important;
+    }
+
+    .s-mt-8 {
+        margin-top: 8px !important;
+    }
+
     #main {
         #header {
             overflow: hidden;
@@ -46,6 +55,14 @@
             .mobile-menu-btn {
                 display: block;
             }
+        }
+
+        #content .member-img {
+            width: 60%;
+        }
+
+        #content .contact-form {
+            margin-top: 16px;
         }
     }
 }

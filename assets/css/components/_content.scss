@@ -28,7 +28,7 @@
   }
 
   .member-list {
-    margin-top: 48px;
+    margin-top: 32px;
     margin-bottom: 48px;
 
     .member-item {
@@ -39,7 +39,7 @@
       img {
         margin-top: 15px;
         width: 154px;
-        height: 154px;
+        height: auto;
         border-radius: 5px;
       }
     }
@@ -82,7 +82,7 @@
       }
 
       .place-list {
-        margin-top: 32px;
+        margin-top: 16px;
         margin-bottom: 48px;
 
         .place-item {
